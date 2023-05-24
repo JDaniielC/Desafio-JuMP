@@ -14,7 +14,7 @@
                 Ocorrências
             </th>
 			<td mat-cell *matCellDef="let element">
-				{{ element.movimentos }}
+				{{ element.pinnedMovimentoCount }}
 			</td>
 		</ng-container>
 
@@ -23,7 +23,7 @@
                 Qt. total de movimentos
             </th>
 			<td mat-cell *matCellDef="let element">
-				{{ element.totalMovimentos }}
+				{{ element.movimentosCount }}
 			</td>
 		</ng-container>
 
@@ -32,7 +32,7 @@
                 Duração do processo
             </th>
 			<td mat-cell *matCellDef="let element">
-				{{ element.totalDuration }}
+				{{ element.duration }}
 			</td>
 		</ng-container>
 

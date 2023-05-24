@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { DomSanitizer } from '@angular/platform-browser';
-import { map, take } from 'rxjs/operators';
+import { map, take } from 'rxjs';
 
 @Injectable()
 export class ImageApiService {
@@ -11,7 +11,8 @@ export class ImageApiService {
     ) { }
 
 	public getFlowGraph() {
-		return this.http.get('/visualization/image/', {
+    // https://stackoverflow.com/questions/71823558/take1-vs-firstvaluefrom-vs-observable-value
+		return this.http.get('/api/visualization/image/', {
 			responseType: 'text',
         }).pipe(take(1),
                 map((res: string) =>

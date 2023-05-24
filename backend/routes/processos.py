@@ -36,13 +36,13 @@ async def get_log_stats():
     avg_movimentos_per_case = movimentos_count / cases_count
     case_duration_sum = df.groupby(CASE_ID)['duration'].sum().mean()
 
-    return [{
+    return {
         "casesCount": cases_count,
         "movimentosCount": movimentos_count,
         "avgCaseDuration": case_duration_sum,
         "avgMovimentoDuration": avg_movimento_duration,
         "avgMovimentosPerCase": avg_movimentos_per_case,
-    }]
+    }
 
 class ProcessosInfosInput(BaseModel):
     movimento: str
@@ -69,4 +69,4 @@ async def get_processos_infos(request: ProcessosInfosInput):
             "pinnedMovimentoCount": pinned_movimento_count
         })
 
-    return { "cases": cases }
+    return cases
