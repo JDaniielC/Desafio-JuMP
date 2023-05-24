@@ -2,12 +2,14 @@ import { Injectable } from '@angular/core';
 import { FlowchartState } from './state/flowchart-state/flowchart.state';
 import { FlowchartApi } from './api/flowchart.api';
 import { SafeHtml } from '@angular/platform-browser';
+import { AnalysisFacade } from '../analysis/analysis.facade';
 
 @Injectable()
 export class FlowchartFacade {
   public constructor(
     private readonly state: FlowchartState,
-    private readonly api: FlowchartApi
+    private readonly api: FlowchartApi,
+    private readonly analysisFacade: AnalysisFacade
   ) {}
 
   public getFlowgraph() {
@@ -16,10 +18,6 @@ export class FlowchartFacade {
 
   public getProcessoStatistics() {
     return this.state.getProcessoStatistics();
-  }
-
-  public getMovimentacao() {
-    return this.state.getMovimentacao();
   }
 
   public setFlowgraph(flowgraph: SafeHtml) {
@@ -32,7 +30,7 @@ export class FlowchartFacade {
     });
   }
 
-  public setMovimentacao(movimentacao: string) {
-    this.state.setMovimentacao(movimentacao);
+  public setMovimento(movimento: string) {
+    this.analysisFacade.setQueryParams({ movimento });
   }
 }

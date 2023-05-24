@@ -5,9 +5,11 @@ import { SafeHtml } from '@angular/platform-browser';
 
 @Injectable()
 export class FlowchartState {
-  private readonly processoStatistics = new BehaviorSubject({} as ProcessoStatistics);
+  private readonly processoStatistics = new BehaviorSubject(
+    {} as ProcessoStatistics
+  );
   private readonly flowgraph = new BehaviorSubject({} as SafeHtml);
-  private readonly movimentacao = new BehaviorSubject('A1');
+
 
   public getProcessoStatistics() {
     return this.processoStatistics.asObservable();
@@ -15,10 +17,6 @@ export class FlowchartState {
 
   public getFlowgraph() {
     return this.flowgraph.asObservable();
-  }
-
-  public getMovimentacao() {
-    return this.movimentacao.asObservable();
   }
 
   public setProcessoStatistics(processoStatistics: ProcessoStatistics) {
@@ -29,7 +27,4 @@ export class FlowchartState {
     this.flowgraph.next(flowgraph);
   }
 
-  public setMovimentacao(movimentacao: string) {
-    this.movimentacao.next(movimentacao);
-  }
 }

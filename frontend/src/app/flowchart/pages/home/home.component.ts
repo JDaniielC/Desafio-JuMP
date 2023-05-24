@@ -3,6 +3,7 @@ import { ProcessoStatistics } from '../../types/ProcessoStatistics';
 import { Subscription } from 'rxjs';
 import { FlowchartFacade } from '../../flowchart.facade';
 import { SafeHtml } from '@angular/platform-browser';
+import { ImageApiService } from 'src/app/shared/services/image-api.service';
 
 @Component({
   selector: 'app-home',
@@ -15,7 +16,14 @@ export class HomeComponent implements OnDestroy {
   subscription1$!: Subscription
   subscription2$!: Subscription
 
-  constructor(private readonly facade: FlowchartFacade) {
+  constructor(
+     private readonly facade: FlowchartFacade,
+     private readonly imageApiService: ImageApiService
+    ) {
+    imageApiService.getFlowGraph().subscribe((flowchart: SafeHtml) => {;
+      facade.setFlowgraph(flowchart);
+    });
+    facade.fetchProcessoStatistics();
     this.subscription1$ = facade.getProcessoStatistics()
       .subscribe((processoStatistics: ProcessoStatistics) => {
         this.statisticsData = processoStatistics;

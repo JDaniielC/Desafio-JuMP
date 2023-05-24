@@ -9,6 +9,6 @@ export class FlowchartApi {
   constructor(private readonly http: HttpClient) { }
 
   public fetchProcessoStatistics() {
-    return this.http.get<ProcessoStatistics>('/api/processos/stats').pipe(take(1));
+    return this.http.get<ProcessoStatistics>('/api/processos/stats/').pipe(take(1));
   }
 }

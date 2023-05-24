@@ -58,7 +58,7 @@ export class FlowgraphComponent implements AfterViewInit {
   }
 
   setMovimentacao(movimentacao: string) {
-    this.facade.setMovimentacao(movimentacao.trim());
+    this.facade.setMovimento(movimentacao.trim());
     this.router.navigate(['/analysis']);
   }
 
