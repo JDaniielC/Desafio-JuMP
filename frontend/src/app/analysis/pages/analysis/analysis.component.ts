@@ -13,10 +13,11 @@ export class AnalysisComponent implements OnDestroy {
   processoList: Processo[] = [];
   subscription!: Subscription
 
-  constructor(private facade: AnalysisFacade) {
-    facade.getProcessoData().subscribe((processoData: Processo[]) => {
-      this.processoList = processoData;
-    });
+  constructor(private readonly facade: AnalysisFacade) {
+    this.subscription = facade.getProcessoData()
+      .subscribe((processoData: Processo[]) => {
+        this.processoList = processoData;
+      });
   }
 
   ngOnDestroy(): void {
