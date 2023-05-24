@@ -1,0 +1,18 @@
+mat-card {
+  max-height: 45em;
+
+  .image-container {
+    max-height: 55em;
+    height: 100%;
+    overflow: hidden;
+    position: relative;
+    cursor: grab;
+    user-select: none;
+  }
+
+  .image-container:active {
+    cursor: grabbing;
+    cursor: -moz-grabbing;
+    cursor: -webkit-grabbing;
+  }
+}
