@@ -18,6 +18,10 @@ export class FlowchartFacade {
     return this.state.getProcessoStatistics();
   }
 
+  public getMovimentacao() {
+    return this.state.getMovimentacao();
+  }
+
   public setFlowgraph(flowgraph: SafeHtml) {
     this.state.setFlowgraph(flowgraph);
   }
@@ -26,5 +30,9 @@ export class FlowchartFacade {
     this.api.fetchProcessoStatistics().subscribe((processosStatistics) => {
       this.state.setProcessoStatistics(processosStatistics);
     });
+  }
+
+  public setMovimentacao(movimentacao: string) {
+    this.state.setMovimentacao(movimentacao);
   }
 }
