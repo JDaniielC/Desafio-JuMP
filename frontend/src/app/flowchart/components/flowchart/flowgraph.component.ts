@@ -28,13 +28,17 @@ export class FlowgraphComponent implements AfterViewInit {
 
   ngAfterViewInit(): void {
     this.interval = setInterval(() => {
-      const svgElement = this.graph.nativeElement.querySelector('svg');
-      if (this.graph && svgElement) {
+      const svgElement = this.graph ? this.graph.nativeElement.querySelector('svg') : false;
+      if (svgElement) {
         this.modifyGraph();
         this.renderSvgPanZoom(svgElement);
         clearInterval(this.interval);
       }
     }, 1000);
+  }
+
+  isNotEmpty(): boolean {
+    return JSON.stringify(this.graphSource) !== '{}';
   }
 
   renderSvgPanZoom(svgElement: SVGElement) {
@@ -46,8 +50,6 @@ export class FlowgraphComponent implements AfterViewInit {
       center: true,
       dblClickZoomEnabled: false,
     });
-    svgElement.style.width = '100%';
-    svgElement.style.height = '100%';
 
     const controls = svgElement.querySelector(
       '#svg-pan-zoom-controls'

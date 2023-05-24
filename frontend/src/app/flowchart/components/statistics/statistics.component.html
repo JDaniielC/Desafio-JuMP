@@ -21,6 +21,6 @@
   <mat-divider vertical></mat-divider>
   <div class="statistic-group">
     <span>Média de movimento por processo</span>
-    <span>{{ data.avgMovimentosPerCase }}</span>
+    <span>{{ data.avgMovimentosPerCase | number: '1.0-2' }}</span>
   </div>
 </mat-card>
