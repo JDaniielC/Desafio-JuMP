@@ -12,6 +12,7 @@ import { MatTableModule } from '@angular/material/table';
 import { MatIconModule } from '@angular/material/icon';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatSortModule } from '@angular/material/sort';
+import { SharedModule } from '../shared/shared.module';
 
 @NgModule({
   providers: [
@@ -25,6 +26,7 @@ import { MatSortModule } from '@angular/material/sort';
     AnalysisTableComponent,
   ],
   imports: [
+    SharedModule,
     CommonModule,
     MatIconModule,
     MatSortModule,

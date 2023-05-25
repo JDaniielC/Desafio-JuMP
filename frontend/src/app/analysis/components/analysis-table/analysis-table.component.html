@@ -28,7 +28,7 @@
         Duração do processo
       </th>
       <td mat-cell *matCellDef="let element">
-        {{ element.duration }}
+        {{ element.duration | durationTimeBySeconds }}
       </td>
     </ng-container>
 
