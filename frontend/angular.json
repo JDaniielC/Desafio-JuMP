@@ -30,7 +30,11 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.scss"
+              "src/styles.scss",
+              {
+                "input": "src/theme/variables.scss",
+                "inject": true
+              }
             ],
             "scripts": [],
             "allowedCommonJsDependencies": [

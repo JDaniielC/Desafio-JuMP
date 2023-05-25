@@ -2,8 +2,8 @@ import {
   Component,
   ElementRef,
   ViewChild,
-  AfterViewInit,
   Input,
+  OnChanges
 } from '@angular/core';
 import { SafeHtml } from '@angular/platform-browser';
 import * as d3 from 'd3';
@@ -16,8 +16,8 @@ import { Router } from '@angular/router';
   templateUrl: './flowgraph.component.html',
   styleUrls: ['./flowgraph.component.scss'],
 })
-export class FlowgraphComponent implements AfterViewInit {
-  @ViewChild('graph', { static: false }) graph!: ElementRef;
+export class FlowgraphComponent implements OnChanges {
+  @ViewChild('graph') graph!: ElementRef;
   @Input() graphSource!: SafeHtml;
   interval!: NodeJS.Timeout;
 
@@ -26,7 +26,7 @@ export class FlowgraphComponent implements AfterViewInit {
       private readonly router: Router
     ) {}
 
-  ngAfterViewInit(): void {
+  ngOnChanges(): void {
     this.interval = setInterval(() => {
       const svgElement = this.graph ? this.graph.nativeElement.querySelector('svg') : false;
       if (svgElement) {

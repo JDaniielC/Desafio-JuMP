@@ -1,7 +1,7 @@
 mat-card {
   flex-direction: row;
   gap: 1em;
-  color: dimgray;
+  color: var(--cinza-secundario);
 
   div:first-child {
     padding-left: 1em;
@@ -14,7 +14,7 @@ mat-card {
     gap: 0.5em;
 
     span:nth-child(2) {
-      font-size: 1.5em;
+      font-size: var(--fonte-24);
       font-weight: 900;
     }
   }
