@@ -7,10 +7,12 @@ services:
       dockerfile: Dockerfile
     image: jump/backend
     ports:
-      - "8000:8000"
+      - "${PORT}:${PORT}"
     restart: always
     networks:
       - jump-network
+    environment:
+      - PORT=${PORT}
 
   frontend:
     build:
