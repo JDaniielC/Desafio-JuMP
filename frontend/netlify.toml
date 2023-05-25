@@ -1,4 +1,4 @@
 [[redirects]]
   from = "/api/*"
-  to = "https://desafio-jump-backend.up.railway.app/"
+  to = "https://desafio-jump-backend.up.railway.app/:splat"
   status = 200
