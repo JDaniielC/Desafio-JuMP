@@ -5,6 +5,9 @@
 
   .logo-image {
     width: 10em;
+    @media screen and (max-width: 800px) {
+      width: 8em;
+    }
   }
 
   span {
@@ -13,6 +16,10 @@
     align-items: center;
     gap: 0.5em;
     padding: 0 2em;
+
+    @media screen and (max-width: 800px) {
+      padding: 0 0.5em;
+    }
   }
 
   #dark-mode-button {
@@ -29,5 +36,9 @@
     color: var(--ion-color-dark);
     font-size: var(--fonte-18);
     font-weight: 500;
+
+    @media screen and (max-width: 800px) {
+      font-size: var(--fonte-14)
+    }
   }
 }
