@@ -1,0 +1,4 @@
+[[redirects]]
+  from = "/api/*"
+  to = "https://desafio-jump-backend.up.railway.app/"
+  status = 200
