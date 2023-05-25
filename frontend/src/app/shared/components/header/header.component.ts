@@ -7,4 +7,7 @@ import { Component } from '@angular/core';
 })
 export class HeaderComponent {
 
+  public darkMode() {
+    document.body.classList.toggle('dark-theme')
+  }
 }
