@@ -35,6 +35,10 @@ export class AnalysisTableComponent implements AfterViewInit, OnChanges {
     this.dataSource.paginator = this.paginator;
   }
 
+  isEmpty(): boolean {
+    return this.data.length === 0;
+  }
+
   ngAfterViewInit(): void {
     this.updateData();
   }

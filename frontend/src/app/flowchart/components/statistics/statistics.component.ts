@@ -18,7 +18,5 @@ export class StatisticsComponent {
   @HostListener('window:resize', ['$event'])
   onWindowResize() {
     this.getScreenWidth = window.innerWidth;
-
-    console.log(this.getScreenWidth)
   }
 }

@@ -1,7 +1,7 @@
-import { Component, OnInit, OnDestroy } from '@angular/core';
+import { Component, OnDestroy } from '@angular/core';
 import { AnalysisFacade } from '../../analysis.facade';
 import { Processo } from '../../types/Processo';
-import { Subscription } from 'rxjs';
+import { Subscription, take } from 'rxjs';
 import { ProcessoParams } from '../../types/processoParams';
 
 @Component({
@@ -9,7 +9,7 @@ import { ProcessoParams } from '../../types/processoParams';
   templateUrl: './analysis.component.html',
   styleUrls: ['./analysis.component.scss'],
 })
-export class AnalysisComponent implements OnInit, OnDestroy {
+export class AnalysisComponent implements OnDestroy {
   selectedMovimento: string = 'Expedição de movimento';
   processoList: Processo[] = [];
   subscription1$!: Subscription
@@ -20,12 +20,9 @@ export class AnalysisComponent implements OnInit, OnDestroy {
       .subscribe((processoData: Processo[]) => {
         this.processoList = processoData;
       });
-  }
-
-  ngOnInit(): void {
-    this.subscription2$ = this.facade.getQueryParams()
-      .subscribe((queryParams: ProcessoParams) => {
-        this.selectedMovimento = queryParams?.movimento ?? '-';
+    this.subscription2$ = this.facade.getMovimentoSelected()
+      .subscribe((movimentoSelected: string) => {
+        this.selectedMovimento = movimentoSelected;
       });
   }
 

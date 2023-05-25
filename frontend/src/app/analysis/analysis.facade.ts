@@ -1,6 +1,6 @@
 import { Injectable } from "@angular/core";
 import { AnalysisState } from "./state/analysis-state/analysis.state";
-import { ProcessoParams } from "./types/processoParams";
+import { Processo } from "./types/Processo";
 
 @Injectable()
 export class AnalysisFacade {
@@ -12,11 +12,15 @@ export class AnalysisFacade {
         return this.state.getProcessoData();
     }
 
-    public getQueryParams() {
-        return this.state.getQueryParams();
+    public setProcessoData(processoData: Processo[]) {
+        this.state.setProcessoData(processoData);
     }
 
-    public setQueryParams(queryParams: ProcessoParams) {
-        this.state.setQueryParams(queryParams);
+    public getMovimentoSelected() {
+        return this.state.getMovimentoSelected();
+    }
+
+    public setMovimentoSelected(movimento: string) {
+        this.state.setMovimentoSelected(movimento);
     }
 }

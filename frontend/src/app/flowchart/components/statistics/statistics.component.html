@@ -1,12 +1,12 @@
 <mat-card>
   <div class="statistic-group">
     <span>Quantidade de movimentos</span>
-    <span>{{ data.movimentosCount }}</span>
+    <span>{{ data.movimentosCount || '-' }}</span>
   </div>
   <mat-divider *ngIf="getScreenWidth > 800" vertical></mat-divider>
   <div class="statistic-group">
     <span>Quantidade de processos</span>
-    <span>{{ data.casesCount }}</span>
+    <span>{{ data.casesCount || '-' }}</span>
   </div>
   <mat-divider *ngIf="getScreenWidth > 800" vertical></mat-divider>
   <div class="statistic-group">
@@ -21,6 +21,6 @@
   <mat-divider *ngIf="getScreenWidth > 800" vertical></mat-divider>
   <div class="statistic-group">
     <span>Média de movimento por processo</span>
-    <span>{{ data.avgMovimentosPerCase | number: '1.0-2' }}</span>
+    <span>{{ data.avgMovimentosPerCase || 0 | number: '1.0-2' }}</span>
   </div>
 </mat-card>

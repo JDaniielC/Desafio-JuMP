@@ -1,15 +1,15 @@
 <mat-toolbar id="app-header">
     <img class="logo-image" src="/assets/logo.webp"
-         alt="A logo do JuMP acompanhado pelo nome em verde e azul">
+         alt="Logo JuMP">
     <span [routerLink]="['/']">
-        <mat-icon> account_tree </mat-icon>
+        <mat-icon aria-hidden="false" aria-label="Fluxograma"> account_tree </mat-icon>
         <p> Fluxograma </p>
     </span>
     <span [routerLink]="['/analysis/']">
-        <mat-icon> cases </mat-icon>
+        <mat-icon aria-hidden="false" aria-label="Tabela de processos"> cases </mat-icon>
         <p> Análise de processos </p>
     </span>
     <span id="dark-mode-button" (click)="darkMode()">
-      <mat-icon>invert_colors</mat-icon>
+      <mat-icon aria-hidden="false" aria-label="Mudar tema">invert_colors</mat-icon>
     </span>
 </mat-toolbar>

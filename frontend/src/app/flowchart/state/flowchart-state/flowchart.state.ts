@@ -9,7 +9,9 @@ export class FlowchartState {
     {} as ProcessoStatistics
   );
   private readonly flowgraph = new BehaviorSubject({} as SafeHtml);
-
+  private readonly queryParams = new BehaviorSubject(
+    'A1'
+    );
 
   public getProcessoStatistics() {
     return this.processoStatistics.asObservable();
@@ -17,6 +19,10 @@ export class FlowchartState {
 
   public getFlowgraph() {
     return this.flowgraph.asObservable();
+  }
+
+  public getQueryParams() {
+    return this.queryParams.asObservable();
   }
 
   public setProcessoStatistics(processoStatistics: ProcessoStatistics) {
@@ -27,4 +33,7 @@ export class FlowchartState {
     this.flowgraph.next(flowgraph);
   }
 
+  public setQueryParams(movimento: string) {
+      this.queryParams.next(movimento);
+  }
 }

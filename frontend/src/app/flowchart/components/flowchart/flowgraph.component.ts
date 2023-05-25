@@ -38,7 +38,8 @@ export class FlowgraphComponent implements OnChanges {
   }
 
   isNotEmpty(): boolean {
-    return JSON.stringify(this.graphSource) !== '{}';
+    let graphSource = this.graphSource;
+    return graphSource !== '' && graphSource !== '{}';
   }
 
   renderSvgPanZoom(svgElement: SVGElement) {
@@ -58,7 +59,7 @@ export class FlowgraphComponent implements OnChanges {
   }
 
   setMovimentacao(movimentacao: string) {
-    this.facade.setMovimento(movimentacao.trim());
+    this.facade.setQueryParams(movimentacao.trim());
     this.router.navigate(['/analysis']);
   }
 
