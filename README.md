@@ -23,3 +23,13 @@ PORT=8000
 
 Para rodar o projeto, é necessário ter o docker e o docker-compose instalados na máquina. Após isso, basta rodar o comando `docker-compose up` na raiz do projeto.
 Você também pode rodar o projeto sem o docker, para isso, basta seguir os passos que se encontram nas suas respectivas pastas.
+
+## TODO
+
+- [ ] Verificar e adicionar testes unitários
+- [ ] Verificar e adicionar testes de integração
+- [ ] Verificar e adicionar testes e2e
+- [ ] Adicionar tema com cores customizáveis
+- [ ] Verificar e adicionar filtos.
+- [ ] Tornar backend RESTful.
+- [ ] Deploy.
