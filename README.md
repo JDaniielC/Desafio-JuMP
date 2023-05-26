@@ -1,5 +1,7 @@
 # Desafio-JuMP
-Desafio Técnico — JuMP Frontend
+[Clique aqui para redirecioná-lo para o site.](https://jdsc2-jump-frontend.netlify.app/)
+
+![Tela inicial](./.github/home.png)
 
 ## Motivação
 Este projeto é parte de um modelo de avaliação e recrutamento de desenvolvimento frontend para a equipe JuMP na V-lab, no qual, fui desafiado a desenvolver uma aplicação Angular que se encontrava com diversos problemas de arquitetura e erros.
@@ -32,4 +34,3 @@ Você também pode rodar o projeto sem o docker, para isso, basta seguir os pass
 - [ ] Adicionar tema com cores customizáveis
 - [ ] Verificar e adicionar filtos.
 - [ ] Tornar backend RESTful.
-- [ ] Deploy.
