@@ -9,11 +9,10 @@ export class AnalysisApi {
 
   constructor(private readonly http: HttpClient) { }
 
-  public fetchProcessosData(params: ProcessoParams) {
+  public fetchProcessosData({ movimento }: ProcessoParams) {
     // https://rxjs.dev/deprecations/to-promise
-    return firstValueFrom(this.http.post<Processo[]>(
-      '/api/processos/',
-     params
+    return firstValueFrom(this.http.get<Processo[]>(
+      `/api/processos?movimento=${movimento}`
     ));
   }
 }

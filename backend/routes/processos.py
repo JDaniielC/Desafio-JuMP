@@ -44,16 +44,19 @@ async def get_log_stats():
         "avgMovimentosPerCase": avg_movimentos_per_case,
     }
 
-class ProcessosInfosInput(BaseModel):
-    movimento: str
+# class ProcessosInfosInput(BaseModel):
+    # movimento: str
 
-@router.post("/", status_code=200)
-async def get_processos_infos(request: ProcessosInfosInput):
+# https://fastapi.tiangolo.com/tutorial/query-params/
+# Não vi necessidade de ser post.
+# Talvez no futuro seja necessário.
+@router.get("/", status_code=200)
+async def get_processos_infos(movimento: str = None):
     """
     Returns a list of all processos with some stats and a count
     of how many times the given movimento happened.
     """
-    pinned_movimento = request.movimento
+    pinned_movimento = movimento
     cases, df = [], core_instance.log.copy()
     df['duration'] = df[END_TIMESTAMP] - df[START_TIMESTAMP]
 
