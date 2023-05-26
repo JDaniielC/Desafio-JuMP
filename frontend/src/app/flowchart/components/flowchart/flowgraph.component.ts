@@ -3,7 +3,6 @@ import {
   ElementRef,
   ViewChild,
   Input,
-  OnChanges
 } from '@angular/core';
 import { SafeHtml } from '@angular/platform-browser';
 import * as d3 from 'd3';
@@ -16,7 +15,7 @@ import { Router } from '@angular/router';
   templateUrl: './flowgraph.component.html',
   styleUrls: ['./flowgraph.component.scss'],
 })
-export class FlowgraphComponent implements OnChanges {
+export class FlowgraphComponent {
   @ViewChild('graph') graph!: ElementRef;
   @Input() graphSource!: SafeHtml;
   interval!: NodeJS.Timeout;
@@ -24,18 +23,16 @@ export class FlowgraphComponent implements OnChanges {
   constructor(
       private readonly facade: FlowchartFacade,
       private readonly router: Router
-    ) {}
-
-  ngOnChanges(): void {
-    this.interval = setInterval(() => {
-      const svgElement = this.graph ? this.graph.nativeElement.querySelector('svg') : false;
-      if (svgElement) {
-        this.modifyGraph();
-        this.renderSvgPanZoom(svgElement);
-        clearInterval(this.interval);
-      }
-    }, 1000);
-  }
+    ) {
+      this.interval = setInterval(() => {
+        const svgElement = this.graph ? this.graph.nativeElement.querySelector('svg') : false;
+        if (svgElement) {
+          this.modifyGraph();
+          this.renderSvgPanZoom(svgElement);
+          clearInterval(this.interval);
+        }
+      }, 500);
+    }
 
   isNotEmpty(): boolean {
     let graphSource = this.graphSource;
