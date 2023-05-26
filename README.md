@@ -18,19 +18,22 @@ Este projeto é parte de um modelo de avaliação e recrutamento de desenvolvime
 O projeto foi dividido em duas partes, o frontend e o backend. O frontend foi desenvolvido em Angular e o backend em FastAPI.
 
 ## Como rodar
-Crie um arquivo .env na raiz do projeto com as seguintes variáveis de ambiente:
-```
-PORT=8000
-```
 
 Para rodar o projeto, é necessário ter o docker e o docker-compose instalados na máquina. Após isso, basta rodar o comando `docker-compose up` na raiz do projeto.
 Você também pode rodar o projeto sem o docker, para isso, basta seguir os passos que se encontram nas suas respectivas pastas.
 
 ## TODO
 
+- [ ] Melhorar o tooltip (cor e clicar no node).
+- [ ] Dark mode no grafo (mudar cor das linhas e mat-card transparente, pois o svg já está transparente).
+- [x] Não precisa de .env para o compose.yml
 - [ ] Verificar e adicionar testes unitários
-- [ ] Verificar e adicionar testes de integração
-- [ ] Verificar e adicionar testes e2e
-- [ ] Adicionar tema com cores customizáveis
-- [ ] Verificar e adicionar filtos.
+- [ ] Subir o back como um monolito (considere que ele pode estar lento o PORT 8000 do compose!).
+- [ ] Bug no backend (média de tempo está quebrado).
+- [ ] Melhorar responsividade.
+- [ ] Mudar UI (header fixo e transparente).
+- [ ] Melhorar o dark mode e adicionar tema daltônico.
+- [ ] Colocar esquema de cores organizado.
 - [ ] Tornar backend RESTful.
+- [ ] Verificar e adicionar testes e2e
+- [ ] Verificar e adicionar filtros.
