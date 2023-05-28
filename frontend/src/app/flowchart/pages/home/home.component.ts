@@ -1,9 +1,8 @@
 import { Component, OnDestroy } from '@angular/core';
 import { ProcessoStatistics } from '../../types/ProcessoStatistics';
-import { Subscription, take } from 'rxjs';
+import { Subscription } from 'rxjs';
 import { FlowchartFacade } from '../../flowchart.facade';
 import { SafeHtml } from '@angular/platform-browser';
-import { ImageApiService } from 'src/app/shared/services/image-api.service';
 
 @Component({
   selector: 'app-home',
@@ -16,7 +15,9 @@ export class HomeComponent implements OnDestroy {
   subscription1$!: Subscription;
   subscription2$!: Subscription;
 
-  constructor(private readonly facade: FlowchartFacade) {
+  constructor(
+    private readonly facade: FlowchartFacade,
+  ) {
     this.subscription2$ = facade
       .getFlowgraph()
       .subscribe((flowchart: SafeHtml) => {

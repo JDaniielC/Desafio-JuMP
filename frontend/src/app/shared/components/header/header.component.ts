@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { DarkThemeService } from '../../services/dark-theme/dark-theme.service';
 
 @Component({
   selector: 'app-header',
@@ -6,8 +7,11 @@ import { Component } from '@angular/core';
   styleUrls: ['./header.component.scss']
 })
 export class HeaderComponent {
+  constructor (private readonly darkThemeService: DarkThemeService) { }
 
   public darkMode() {
-    document.body.classList.toggle('dark-theme')
+    this.darkThemeService.darkMode();
+    this.darkThemeService.turnGraphDarkMode();
   }
+
 }

@@ -24,10 +24,9 @@ Você também pode rodar o projeto sem o docker, para isso, basta seguir os pass
 
 ## TODO
 
-- [ ] Melhorar o tooltip (cor e clicar no node).
-- [ ] Dark mode no grafo (mudar cor das linhas e mat-card transparente, pois o svg já está transparente).
-- [x] Não precisa de .env para o compose.yml
-- [ ] Verificar e adicionar testes unitários
+- [x] Melhorar o tooltip (cor e clicar no node).
+- [x] Dark mode no grafo (mudar cor das linhas e mat-card transparente, pois o svg já está transparente).
+- [x] Verificar e adicionar testes unitários
 - [ ] Subir o back como um monolito (considere que ele pode estar lento o PORT 8000 do compose!).
 - [ ] Bug no backend (média de tempo está quebrado).
 - [ ] Melhorar responsividade.

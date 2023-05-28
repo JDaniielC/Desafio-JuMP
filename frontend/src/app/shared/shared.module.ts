@@ -7,6 +7,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { AppRoutingModule } from '../app-routing.module';
 import { ImageApiService } from './services/image-api.service';
 import { DurationTimeBySecondsPipe } from './pipes/duration-time-by-seconds.pipe';
+import { DarkThemeService } from './services/dark-theme/dark-theme.service';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { DurationTimeBySecondsPipe } from './pipes/duration-time-by-seconds.pipe
     AppRoutingModule,
   ],
   providers: [
-    ImageApiService
+    ImageApiService,
+    DarkThemeService
   ],
   bootstrap: [],
   exports: [
