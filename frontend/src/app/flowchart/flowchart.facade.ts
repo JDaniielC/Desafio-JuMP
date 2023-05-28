@@ -1,28 +1,23 @@
 import { Injectable } from '@angular/core';
 import { FlowchartState } from './state/flowchart-state/flowchart.state';
-import { FlowchartApi } from './api/flowchart.api';
+import { FlowchartApi } from './api/flowchart/flowchart.api';
 import { SafeHtml } from '@angular/platform-browser';
 import { take } from 'rxjs';
 import { ProcessoStatistics } from './types/ProcessoStatistics';
-import { ImageApiService } from '../shared/services/image-api/image-api.service';
 
 @Injectable()
 export class FlowchartFacade {
   public constructor(
     private readonly state: FlowchartState,
     private readonly api: FlowchartApi,
-    private readonly imageService: ImageApiService,
   ) {}
 
   public fetchFlowgraph() {
-    this.imageService.fetchFlowGraph().subscribe((flowgraph) => {
+    // The api has take(1)
+    this.api.fetchFlowGraph().subscribe((flowgraph) => {
       this.setFlowgraph(flowgraph);
     }).add(() => {
       this.fetchProcessoStatistics();
-    });
-
-    this.imageService.getFlowGraph().subscribe((flowgraph) => {
-      this.setFlowgraph(flowgraph);
     });
   }
 

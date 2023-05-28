@@ -25,14 +25,15 @@ Você também pode rodar o projeto sem o docker, para isso, basta seguir os pass
 ## TODO
 
 - [x] Melhorar o tooltip (cor e clicar no node).
-- [x] Dark mode no grafo (mudar cor das linhas e mat-card transparente, pois o svg já está transparente).
 - [x] Verificar e adicionar testes unitários
 - [ ] Subir o back como um monolito (considere que ele pode estar lento o PORT 8000 do compose!).
-- [ ] Bug no backend (média de tempo está quebrado).
-- [ ] Melhorar responsividade.
-- [ ] Mudar UI (header fixo e transparente).
+- [ ] Arquitetura do backend (separar em módulos).
+- [ ] Adicionar documentação do backend.
+- [ ] Tratamento de excessões no backend.
 - [ ] Melhorar o dark mode e adicionar tema daltônico.
 - [ ] Colocar esquema de cores organizado.
-- [ ] Tornar backend RESTful.
+- [ ] Local storage to save preferences (dark mode).
+- [ ] Melhorar responsividade.
+- [ ] Mudar UI (header fixo e transparente).
 - [ ] Verificar e adicionar testes e2e
 - [ ] Verificar e adicionar filtros.

@@ -30,7 +30,6 @@ import { SharedModule } from '../shared/shared.module';
     CommonModule,
     MatIconModule,
     MatSortModule,
-    MatCardModule,
     MatTableModule,
     MatPaginatorModule,
     AnalysisRoutingModule,

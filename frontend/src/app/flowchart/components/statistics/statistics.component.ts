@@ -4,7 +4,7 @@ import { ProcessoStatistics } from '../../types/ProcessoStatistics';
 @Component({
   selector: 'app-statistics',
   templateUrl: './statistics.component.html',
-  styleUrls: ['./statistics.component.scss']
+  styleUrls: ['./statistics.component.scss'],
 })
 export class StatisticsComponent {
   @Input() data: ProcessoStatistics = {} as ProcessoStatistics;
@@ -12,7 +12,7 @@ export class StatisticsComponent {
   public getScreenWidth: any;
 
   ngOnInit() {
-      this.getScreenWidth = window.innerWidth;
+    this.getScreenWidth = window.innerWidth;
   }
 
   @HostListener('window:resize', ['$event'])

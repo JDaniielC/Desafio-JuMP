@@ -1,16 +1,19 @@
 import { TestBed } from '@angular/core/testing';
 import { HttpClientTestingModule, HttpTestingController } from '@angular/common/http/testing';
-import { ProcessoStatistics } from '../types/ProcessoStatistics';
+import { ProcessoStatistics } from '../../types/ProcessoStatistics';
 import { FlowchartApi } from './flowchart.api';
+import { DomSanitizer } from '@angular/platform-browser';
 
 describe('FlowchartApi', () => {
   let service: FlowchartApi;
   let httpTestingController: HttpTestingController
+  let sanitizerMock: jasmine.SpyObj<DomSanitizer>;
 
   beforeEach(() => {
+    sanitizerMock = jasmine.createSpyObj<DomSanitizer>('DomSanitizer', ['bypassSecurityTrustHtml']);
     TestBed.configureTestingModule({
       imports: [ HttpClientTestingModule ],
-      providers: [ FlowchartApi ],
+      providers: [ FlowchartApi, { provide: DomSanitizer, useValue: sanitizerMock } ],
     });
     service = TestBed.inject(FlowchartApi);
     httpTestingController = TestBed.inject(HttpTestingController);
@@ -41,4 +44,23 @@ describe('FlowchartApi', () => {
     expect(req.request.method).toEqual('GET');
     req.flush(mockProcessoStatistics);
   });
+
+  it('should fetch the flow graph from the API', () => {
+    const mockResponse = '<svg><circle cx="50" cy="50" r="30"></circle></svg>'
+    const mockSanitizedResponse = 'Sanitized HTML';
+
+    sanitizerMock.bypassSecurityTrustHtml.and.returnValue(mockSanitizedResponse);
+
+    service.fetchFlowGraph().subscribe((res) => {
+      expect(res).toEqual(mockSanitizedResponse);
+    });
+
+    const req = httpTestingController.expectOne('/api/visualization/image/');
+    expect(req.request.method).toBe('GET');
+    req.flush(mockResponse);
+
+    expect(sanitizerMock.bypassSecurityTrustHtml).toHaveBeenCalled();
+    expect(sanitizerMock.bypassSecurityTrustHtml).toHaveBeenCalledTimes(1);
+    expect(sanitizerMock.bypassSecurityTrustHtml).toHaveBeenCalledWith(mockResponse);
+  })
 });

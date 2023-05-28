@@ -7,13 +7,12 @@ import { FlowgraphComponent } from './components/flowchart/flowgraph.component';
 import { StatisticsComponent } from './components/statistics/statistics.component';
 
 import { FlowchartRoutingModule } from './flowchart-routing.module';
-import { FlowchartApi } from './api/flowchart.api';
+import { FlowchartApi } from './api/flowchart/flowchart.api';
 import { FlowchartFacade } from './flowchart.facade';
 import { FlowchartState } from './state/flowchart-state/flowchart.state';
 import { flowchartInitializerProvider } from './flowchart.initializer';
 
 import { MatDividerModule } from '@angular/material/divider';
-import { MatCardModule } from '@angular/material/card';
 
 @NgModule({
   declarations: [
@@ -23,7 +22,6 @@ import { MatCardModule } from '@angular/material/card';
   ],
   imports: [
     CommonModule,
-    MatCardModule,
     SharedModule,
     FlowchartRoutingModule,
     MatDividerModule
