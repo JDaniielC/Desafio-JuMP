@@ -45,7 +45,7 @@ export class FlowgraphComponent implements AfterViewInit {
 
   isNotEmpty(): boolean {
     let graphSource = this.graphSource;
-    return graphSource !== '' && graphSource !== '{}';
+    return graphSource !== '' && JSON.stringify(graphSource) !== '{}';
   }
 
   renderSvgPanZoom(svgElement: SVGElement) {
