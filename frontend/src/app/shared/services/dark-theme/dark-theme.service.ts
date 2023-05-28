@@ -6,6 +6,9 @@ export class DarkThemeService {
   constructor() {}
 
   public darkMode() {
+    if (localStorage.getItem('dark-theme') === 'true')
+      localStorage.setItem('dark-theme', 'false');
+    else localStorage.setItem('dark-theme', 'true');
     document.body.classList.toggle('dark-theme');
   }
 
