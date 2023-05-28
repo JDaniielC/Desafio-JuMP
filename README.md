@@ -26,10 +26,6 @@ Você também pode rodar o projeto sem o docker, para isso, basta seguir os pass
 
 - [x] Melhorar o tooltip (cor e clicar no node).
 - [x] Verificar e adicionar testes unitários
-- [ ] Subir o back como um monolito (considere que ele pode estar lento o PORT 8000 do compose!).
-- [ ] Arquitetura do backend (separar em módulos).
-- [ ] Adicionar documentação do backend.
-- [ ] Tratamento de excessões no backend.
 - [ ] Melhorar o dark mode e adicionar tema daltônico.
 - [ ] Colocar esquema de cores organizado.
 - [ ] Local storage to save preferences (dark mode).
