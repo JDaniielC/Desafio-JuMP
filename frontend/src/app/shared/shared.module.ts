@@ -5,7 +5,7 @@ import { HeaderComponent } from './components/header/header.component';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatIconModule } from '@angular/material/icon';
 import { AppRoutingModule } from '../app-routing.module';
-import { ImageApiService } from './services/image-api.service';
+import { ImageApiService } from './services/image-api/image-api.service';
 import { DurationTimeBySecondsPipe } from './pipes/duration-time-by-seconds.pipe';
 import { DarkThemeService } from './services/dark-theme/dark-theme.service';
 
