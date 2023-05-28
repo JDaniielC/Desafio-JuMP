@@ -4,7 +4,7 @@ import { FlowchartApi } from './api/flowchart.api';
 import { SafeHtml } from '@angular/platform-browser';
 import { take } from 'rxjs';
 import { ProcessoStatistics } from './types/ProcessoStatistics';
-import { ImageApiService } from '../shared/services/image-api.service';
+import { ImageApiService } from '../shared/services/image-api/image-api.service';
 
 @Injectable()
 export class FlowchartFacade {
