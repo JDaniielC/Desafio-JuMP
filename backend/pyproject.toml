@@ -3,7 +3,6 @@ name = "jdsc2-railway-fastapi"
 version = "1.0.0"
 description = "A FastAPI server to JuMP challenge"
 authors = ["José Daniel <jdsc2@cin.ufpe.br"]
-license = "MIT"
 
 [tool.poetry.dependencies]
 python = "^3.10"
