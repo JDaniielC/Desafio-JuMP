@@ -9,13 +9,13 @@ export class DurationTimeBySecondsPipe implements PipeTransform {
     const { years, months, days, hours, minutes } = time;
     let returnString = '';
     if (years) {
-      returnString += `${years} anos `;
+      returnString += years == 1 ? '1 ano ' : `${years} anos `;
     }
     if (months) {
-      returnString += `${months} meses `;
+      returnString += months == 1 ? '1 mês ' : `${months} meses `;
     }
     if ((!years || !months) && days) {
-      returnString += `${days} dias `;
+      returnString += days == 1 ? '1 dia ' : `${days} dias `;
     }
     if (
       (!years || !months) &&
@@ -23,7 +23,7 @@ export class DurationTimeBySecondsPipe implements PipeTransform {
       (!years || !days) &&
       hours
     ) {
-      returnString += `${hours} horas `;
+      returnString += hours == 1 ? '1 hora ' : `${hours} horas `;
     }
     if (
       (!years || !months) &&
@@ -34,15 +34,15 @@ export class DurationTimeBySecondsPipe implements PipeTransform {
       (!days || !hours) &&
       minutes
     ) {
-      returnString += `${minutes} minutos`;
+      returnString += minutes == 1 ? '1 minuto' : `${minutes} minutos`;
     }
 
-    return returnString;
+    return returnString.trim();
   }
 
   transform(value: number, ...args: unknown[]): unknown {
-    if (!value) return 'Sem duração';
-    if (value < 60) return `${value} segundos`;
+    if (!value || value < 0) return 'Sem duração';
+    if (value < 60) return value == 1 ? '1 segundo' : `${value} segundos`;
     const time: Duration = intervalToDuration({ start: 0, end: value * 1000 });
     return this.durationToString(time);
   }
