@@ -27,7 +27,7 @@ Você também pode rodar o projeto sem o docker, para isso, basta seguir os pass
 - [x] Melhorar o tooltip (cor e clicar no node).
 - [x] Verificar e adicionar testes unitários
 - [x] Local storage to save preferences (dark mode).
-- [ ] Melhorar responsividade.
+- [x] Melhorar responsividade.
 - [ ] Mudar UI (header fixo e transparente).
 - [ ] Verificar e adicionar testes e2e
 - [ ] Verificar e adicionar filtros.

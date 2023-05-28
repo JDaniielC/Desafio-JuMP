@@ -6,7 +6,7 @@
   .logo-image {
     width: 10em;
     @media screen and (max-width: 800px) {
-      width: 8em;
+      width: 6em;
     }
   }
 
@@ -43,7 +43,7 @@
     font-weight: 500;
 
     @media screen and (max-width: 800px) {
-      font-size: var(--fonte-14)
+      font-size: var(--fonte-12)
     }
   }
 }

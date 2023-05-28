@@ -1,6 +1,13 @@
 #app-analysis-table {
   th, td {
     color: var(--color-font);
+
+    @media screen and (max-width: 800px) {
+      font-size: var(--fonte-14);
+    }
+    @media screen and (max-width: 600px) {
+      font-size: var(--fonte-12);
+    }
   }
 
   table {
@@ -9,6 +16,13 @@
   mat-paginator {
     background-color: var(--color-backgorund);
     color: var(--color-font);
+
+    @media screen and (max-width: 800px) {
+      font-size: var(--fonte-14);
+    }
+    @media screen and (max-width: 600px) {
+      font-size: var(--fonte-12);
+    }
   }
 
   mat-card-content {
