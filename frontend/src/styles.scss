@@ -38,11 +38,12 @@ $frontend-theme: mat.define-light-theme(
 
 html,
 body {
-  height: 100%;
+  height: calc(100% - 60px);
 }
 body {
   margin: 0;
   font-family: Roboto, "Helvetica Neue", sans-serif;
   background-color: transparent;
   min-width: 430px;
+  padding-top: 65px;
 }
