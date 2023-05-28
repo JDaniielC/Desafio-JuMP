@@ -1,8 +1,8 @@
 mat-card {
-  background-color: var(--ion-color-dark-contrast);
+  background-color: var(--color-backgorund);
   flex-direction: row;
   gap: 1em;
-  color: var(--cinza-secundario);
+  color: var(--color-font);
 
   @media screen and (max-width: 800px) {
     display: grid;

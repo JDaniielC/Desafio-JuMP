@@ -1,20 +1,19 @@
 #app-analysis-table {
-  th,
-  td {
-    color: var(--ion-color-dark);
+  th, td {
+    color: var(--color-font);
   }
 
   table {
-    background-color: var(--ion-color-dark-contrast);
+    background-color: var(--color-backgorund);
   }
   mat-paginator {
-    background-color: var(--ion-color-dark-contrast);
-    color: var(--ion-color-dark);
+    background-color: var(--color-backgorund);
+    color: var(--color-font);
   }
 
   mat-card-content {
-    background-color: var(--ion-color-dark-contrast);
-    color: var(--ion-color-dark);
+    background-color: var(--color-backgorund);
+    color: var(--color-font);
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -28,4 +27,8 @@
       align-items: center;
     }
   }
+}
+
+mat-card {
+  background-color: var(--color-backgorund);
 }
