@@ -11,6 +11,8 @@ export class DarkThemeService {
 
   public svgColorChange(color: string) {
     let graph = d3.select('.image-container').select('svg').select('.graph');
+    let nodes = graph.selectAll('g.node');
+    nodes.select('g').select('a').select('path').attr('stroke', color);
     let edges = graph.selectAll('g.edge');
 
     let edgesContent = edges.select('g').select('a');
