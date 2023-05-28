@@ -1,21 +1,13 @@
 from fastapi.responses import FileResponse
-from routes.image import dfg_visualizer
-from .controller import core_instance
+from modules.core import core_instance
 from fastapi import APIRouter
-import pm4py
+from modules import generate_svg
 
 router = APIRouter(
     prefix="/api/visualization",
     tags=['visualization'],
     responses={404: {"visualization": "Not found"}}
 )
-
-def generate_svg(eventlog):
-    frequency_dfg, start_act_freq, end_act_freq = pm4py.discover_dfg(eventlog)
-    return dfg_visualizer(
-        frequency_dfg, eventlog,
-        start_act_freq, end_act_freq
-    ).render()
 
 @router.get("/image/", status_code=200)
 async def get_eventlog_image():
