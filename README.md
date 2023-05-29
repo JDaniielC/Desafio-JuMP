@@ -28,4 +28,4 @@ Você também pode rodar o projeto sem o docker, para isso, basta seguir os pass
 - [x] Verificar e adicionar testes unitários
 - [x] Melhorar responsividade.
 - [x] Mudar UI (header fixo e transparente).
-- [ ] Verificar e adicionar testes e2e
+- [x] Verificar e adicionar testes e2e
