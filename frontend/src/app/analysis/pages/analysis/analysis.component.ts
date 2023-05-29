@@ -1,8 +1,7 @@
 import { Component, OnDestroy } from '@angular/core';
 import { AnalysisFacade } from '../../analysis.facade';
 import { Processo } from '../../types/Processo';
-import { Subscription, take } from 'rxjs';
-import { ProcessoParams } from '../../types/processoParams';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-analysis',
