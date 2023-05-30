@@ -34,7 +34,7 @@ export class HomeComponent implements OnDestroy {
     let graphSource = this.graphSource;
     return (
       graphSource === '' ||
-      graphSource === '{}' ||
+      JSON.stringfy(graphSource) === '{}' ||
       typeof graphSource === 'undefined' ||
       graphSource === null
     );
